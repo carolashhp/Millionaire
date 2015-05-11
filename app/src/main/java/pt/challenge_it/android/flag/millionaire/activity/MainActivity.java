@@ -21,12 +21,15 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        startService(new Intent(getApplicationContext(), QuestionsService.class));
+
         Button btnNewGame = (Button) findViewById(R.id.btnNewGame);
         btnNewGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startService(new Intent(getApplicationContext(), QuestionsService.class));
-                //startActivity(new Intent(getApplicationContext(), MillionaireApplication.class));
+
+                //Intent intentToMillionaireActivity = new Intent(MainActivity.this.MillionaireActivity.class));
+                startActivity(new Intent(getApplicationContext(), MillionaireActivity.class));
 
 
 

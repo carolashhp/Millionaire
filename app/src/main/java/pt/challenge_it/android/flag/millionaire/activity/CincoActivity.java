@@ -18,7 +18,7 @@ public class CincoActivity extends ActionBarActivity {
         setContentView(R.layout.activity_cinco);
 
         TextView txtCinco = (TextView)findViewById(R.id.txtCinco);
-        txtCinco.setText("A resposta " + .getText());
+      //  txtCinco.setText("A resposta " + .getText());
 
         Button btnOk = (Button)findViewById(R.id.btnOk);
 

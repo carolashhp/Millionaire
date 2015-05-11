@@ -85,7 +85,7 @@ public class QuestionsProvider extends ContentProvider
         queryBuilder.setTables(QuestionContract.TABLE);
 
         String type = getType(uri);
-        if(!type.equals(MIME_ONE))
+        if(type.equals(MIME_ONE))
             queryBuilder.appendWhere( QuestionContract.ID + "=" + uri.getLastPathSegment());
 
         Cursor cursor = queryBuilder.query(db, projection, selection, selectionArgs, null, null, sortOrder);

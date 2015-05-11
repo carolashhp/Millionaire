@@ -7,6 +7,7 @@ import android.database.Cursor;
 import java.util.ArrayList;
 import java.util.List;
 
+import pt.challenge_it.android.flag.millionaire.http.QuestionHttpRequest;
 import pt.challenge_it.android.flag.millionaire.model.Question;
 
 /**
@@ -84,6 +85,16 @@ public class OperationsManager
         return questions;
     }
 
+    public static Question[] GetAllTemp(){
+        try{
+            return QuestionHttpRequest.getAll();
+        }
+        catch (Exception e){
+            //
+        }
+
+        return null;
+    }
     /**
      * Operation to delete all {@link Question} from database.
      */

@@ -65,6 +65,10 @@ public class Question
         return sb.toString();
     }
 
+    /*public static GetCorrectAnswers(){
+        for()
+            return
+    }*/
     /**
      * Class that defines one possible question Answer.
      */
