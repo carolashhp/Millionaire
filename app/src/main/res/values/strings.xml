@@ -25,4 +25,5 @@
     <string name="toast_game_over_5">Game Over! Ganhou 500€!</string>
     <string name="toast_game_over_10">Game Over! Ganhou 4000€!</string>
     <string name="action_cinco">50:50</string>
+    <string name="title_activity_publico">PublicoActivity</string>
 </resources>

@@ -56,6 +56,7 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
         TextView txtQuestion = (TextView)findViewById(R.id.txtQuestion);
         txtQuestion.setText(primeira.getText());
 
+
         Button btnAnswerA = (Button)findViewById(R.id.btnAnswerA);
         Button btnAnswerB = (Button)findViewById(R.id.btnAnswerB);
         Button btnAnswerC = (Button)findViewById(R.id.btnAnswerC);
@@ -83,9 +84,9 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
             @Override
             public void onClick(View view) {
 
-                Intent cincoIntent = new Intent(getApplicationContext(), CincoActivity.class);
+                Intent publicoIntent = new Intent(getApplicationContext(), PublicoActivity.class);
               //  cincoIntent.
-                //startActivity(cincoIntent);
+                startActivity(publicoIntent);
 
 
 
@@ -96,8 +97,12 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
         btnTelefone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // Toast.makeText(getApplicationContext(), "A resposta correcta é a " + answers.getIdentifier(AnswerContract.CORRECT == 1), Toast.LENGTH_SHORT)
-                     //   .show();
+
+
+               Toast.makeText(getApplicationContext(), "A resposta correcta é a " +
+                       ((AnswerContract.CORRECT)==1), Toast.LENGTH_SHORT).show();
+
+
 
 
             }
@@ -159,7 +164,7 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
                 finish();
             }
 
-            if(currentQuestionIndex>10&&currentQuestionIndex<16){
+            if(currentQuestionIndex>9&&currentQuestionIndex<16){
                 Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over_10), Toast.LENGTH_SHORT).show();
                 finish();
             }

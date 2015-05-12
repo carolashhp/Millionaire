@@ -9,37 +9,37 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import pt.challenge_it.android.flag.millionaire.R;
+import pt.challenge_it.android.flag.millionaire.model.Question;
+import pt.challenge_it.android.flag.millionaire.provider.AnswerContract;
 
-public class CincoActivity extends ActionBarActivity {
+public class PublicoActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cinco);
+        setContentView(R.layout.activity_publico);
 
-        TextView txtCinco = (TextView)findViewById(R.id.txtCinco);
-      //  txtCinco.setText("A resposta " + .getText());
 
-        Button btnOk = (Button)findViewById(R.id.btnOk);
 
-        btnOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            TextView txtPublico = (TextView) findViewById(R.id.txtPublico);
+            txtPublico.setText("A resposta " + (Question.Answer.getIdentifier(AnswerContract.CORRECT)==1)) +
+                     " obteve 70% enquanto que as restantes respostas obtiveram 10%. ");
+
+            Button btnOk = (Button) findViewById(R.id.btnOk);
+
+            btnOk.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
                     finish();
-            }
-        });
-
-
-
-
-
-    }
+                }
+            });
+        }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_cinco, menu);
+        getMenuInflater().inflate(R.menu.menu_publico, menu);
         return true;
     }
 

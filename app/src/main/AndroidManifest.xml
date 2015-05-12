@@ -46,6 +46,10 @@
             android:name=".activity.MillionaireActivity"
             android:label="@string/title_activity_millionaire" >
         </activity>
+        <activity
+            android:name=".activity.PublicoActivity"
+            android:label="@string/title_activity_publico" >
+        </activity>
     </application>
 
 </manifest>
