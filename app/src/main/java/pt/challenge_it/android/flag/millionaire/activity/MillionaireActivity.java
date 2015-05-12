@@ -29,6 +29,7 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
     private int currentQuestionIndex;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -101,64 +102,71 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
 
             }
         });
-/*
-        btnAnswerA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              //  if(AnswerContract.CORRECT ==1){
-                 //   Toast.makeText(getApplicationContext(), "Resposta Correcta ", Toast.LENGTH_SHORT).show();
-                    /// aparecer próxima questao
-               // }
-            }
-        });
 
-        btnAnswerB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
-        btnAnswerC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        btnAnswerD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-*/
     }
+
+
 
     @Override
     public void onClick(View v) {
+
         if ((boolean)v.getTag())
         {
             this.currentQuestionIndex++;
+
+            if (currentQuestionIndex<5){
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_on), Toast.LENGTH_SHORT).show();
+
+            }
+
+            if (currentQuestionIndex==5){
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_on_5), Toast.LENGTH_SHORT).show();
+            }
+
+            if (currentQuestionIndex>5&&currentQuestionIndex<10){
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_on), Toast.LENGTH_SHORT).show();
+            }
+
+            if (currentQuestionIndex==10){
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_on_10), Toast.LENGTH_SHORT).show();
+            }
+
+            if (currentQuestionIndex>10&&currentQuestionIndex<15){
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_on), Toast.LENGTH_SHORT).show();
+            }
+
             if(currentQuestionIndex==questions.length){
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over), Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_final), Toast.LENGTH_SHORT).show();
                 finish();
+
             }
             else{
                 changeToNextQuestion();
             }
-            // TESTAR SE JÁ ACABOU
-
         }
         else{
-            //VER OS PATAMARES DE SEGURANÇA
-            //alertdialogue
-            if(currentQuestionIndex<5)
-            Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over), Toast.LENGTH_SHORT).show();
-            finish();
+
+            if (currentQuestionIndex<5){
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over), Toast.LENGTH_SHORT).show();
+                finish();
+            }
+
+            if(currentQuestionIndex>4&&currentQuestionIndex<10){
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over_5), Toast.LENGTH_SHORT).show();
+                finish();
+            }
+
+            if(currentQuestionIndex>10&&currentQuestionIndex<16){
+                Toast.makeText(getApplicationContext(), getResources().getString(R.string.toast_game_over_10), Toast.LENGTH_SHORT).show();
+                finish();
+            }
         }
     }
+
+
 
     private void changeToNextQuestion(){
         Question question = this.questions[this.currentQuestionIndex];
@@ -174,6 +182,7 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
                     btnAnswerA.setText(answer.getIdentifier() + " - " + answer.getText());
                     btnAnswerA.setTag(answer.isCorrect());
                     btnAnswerA.setOnClickListener(this);
+
                     break;
                 case 'B':
                     Button btnAnswerB = (Button)findViewById(R.id.btnAnswerB);
@@ -207,7 +216,7 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
         @Override
         protected Question[] doInBackground(Void... params) {
 
-            // depois alterar GetAllTemp para getAllQuestion
+
             return OperationsManager.GetAllTemp();
         }
 
@@ -219,5 +228,6 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
         }
     }
 
-
 }
+
+
