@@ -22,8 +22,7 @@ public class PublicoActivity extends ActionBarActivity {
 
 
             TextView txtPublico = (TextView) findViewById(R.id.txtPublico);
-            txtPublico.setText("A resposta " + (Question.Answer.getIdentifier(AnswerContract.CORRECT)==1)) +
-                     " obteve 70% enquanto que as restantes respostas obtiveram 10%. ");
+            txtPublico.setText("A resposta obteve 70% enquanto que as restantes respostas obtiveram 10%. ");
 
             Button btnOk = (Button) findViewById(R.id.btnOk);
 

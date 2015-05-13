@@ -99,8 +99,8 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
             public void onClick(View view) {
 
 
-               Toast.makeText(getApplicationContext(), "A resposta correcta é a " +
-                       ((AnswerContract.CORRECT)==1), Toast.LENGTH_SHORT).show();
+               Toast.makeText(getApplicationContext(), "A resposta correcta é a "
+                       , Toast.LENGTH_SHORT).show();
 
 
 

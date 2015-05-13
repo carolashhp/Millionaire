@@ -65,13 +65,15 @@ public class Question
         return sb.toString();
     }
 
-    /*public static GetCorrectAnswers(){
-        for()
-            return
-    }*/
+
     /**
      * Class that defines one possible question Answer.
      */
+
+
+
+
+
     public static class Answer
     {
         private final char _identifier;
@@ -112,7 +114,13 @@ public class Question
             StringBuilder sb = new StringBuilder();
             return sb.append("ID: ").append(_identifier).append(" Text: ").append(_text).append(" Correct: ").append(_isCorrect).append(" ").toString();
         }
+
+
     }
+
+
+
+
 
     public static final String ID = "ID";
     public static final String TEXT = "TEXT";
@@ -152,4 +160,13 @@ public class Question
         values.put(ANSWER_CORRECT_4, _answers[3].isCorrect());
         return values;
     }
+
+   /* public Answer getCorrectAnswer() {
+
+       for (int i=0; i<_answers.length; i++){
+
+        }
+        return ;
+    }*/
+
 }
