@@ -75,7 +75,7 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
         btnCinco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // delete answsers
+
 
             }
         });
@@ -85,7 +85,7 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
             public void onClick(View view) {
 
                 Intent publicoIntent = new Intent(getApplicationContext(), PublicoActivity.class);
-              //  cincoIntent.
+
                 startActivity(publicoIntent);
 
 
@@ -99,8 +99,7 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
             public void onClick(View view) {
 
 
-               Toast.makeText(getApplicationContext(), "A resposta correcta é a "
-                       , Toast.LENGTH_SHORT).show();
+               Toast.makeText(getApplicationContext(), "A resposta correcta é a ", Toast.LENGTH_SHORT).show();
 
 
 
