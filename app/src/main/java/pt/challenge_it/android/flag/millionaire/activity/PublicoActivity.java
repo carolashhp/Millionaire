@@ -14,15 +14,19 @@ import pt.challenge_it.android.flag.millionaire.provider.AnswerContract;
 
 public class PublicoActivity extends ActionBarActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_publico);
 
 
 
             TextView txtPublico = (TextView) findViewById(R.id.txtPublico);
-            txtPublico.setText("A resposta obteve 70% enquanto que as restantes respostas obtiveram 10%. ");
+            String correct = getIntent().getStringExtra("CORRECT_ANSWER");
+            txtPublico.setText("A resposta " + correct + " obteve 70% enquanto que as restantes respostas obtiveram 10%. ");
 
             Button btnOk = (Button) findViewById(R.id.btnOk);
 

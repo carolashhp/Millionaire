@@ -161,12 +161,14 @@ public class Question
         return values;
     }
 
-   /* public Answer getCorrectAnswer() {
+   public Answer getCorrectAnswer() {
 
        for (int i=0; i<_answers.length; i++){
-
+            if (_answers[i].isCorrect()){
+                return _answers[i];
+            }
         }
-        return ;
-    }*/
+        return null;
+    }
 
 }

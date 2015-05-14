@@ -9,10 +9,7 @@ import android.widget.Button;
 import pt.challenge_it.android.flag.millionaire.R;
 import pt.challenge_it.android.flag.millionaire.service.QuestionsService;
 
-/**
- * First activity to show on Millionaire Application.
- * @author Challenge.IT
- */
+
 public class MainActivity extends Activity {
 
     @Override
@@ -31,19 +28,9 @@ public class MainActivity extends Activity {
                 //Intent intentToMillionaireActivity = new Intent(MainActivity.this.MillionaireActivity.class));
                 startActivity(new Intent(getApplicationContext(), MillionaireActivity.class));
 
-
-
-
-
             }
         });
 
-        Button btnSettings = (Button) findViewById(R.id.btnSettings);
-        btnSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
     }
 }

@@ -40,41 +40,15 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
         new GetQuestionsTask().execute();
 
 
-/*
-        OperationsManager manager = new OperationsManager(this);
-        List<Question> questions = manager.getAllQuestions();
-        Question primeira = questions.get(0);
-        Question.Answer[] answers = primeira.getAnswers();
 
-        //ArrayList<Question> questionsList = manager.getAll();
-        //Question primeira = questionsList.get(0);
-        //ArrayList<Answer> answers = primeira.getAnswers();
-
-
-
-
-        TextView txtQuestion = (TextView)findViewById(R.id.txtQuestion);
-        txtQuestion.setText(primeira.getText());
-
-
-        Button btnAnswerA = (Button)findViewById(R.id.btnAnswerA);
-        Button btnAnswerB = (Button)findViewById(R.id.btnAnswerB);
-        Button btnAnswerC = (Button)findViewById(R.id.btnAnswerC);
-        Button btnAnswerD = (Button)findViewById(R.id.btnAnswerD);
-
-        btnAnswerA.setText(answers[0].getText());
-        btnAnswerB.setText(answers[1].getText());
-        btnAnswerC.setText(answers[2].getText());
-        btnAnswerD.setText(answers[3].getText());
-
-*/
         Button btnCinco = (Button)findViewById(R.id.btnCinco);
-        Button btnPublico = (Button)findViewById(R.id.btnPublico);
-        Button btnTelefone = (Button)findViewById(R.id.btnTelefone);
+        final Button btnPublico = (Button)findViewById(R.id.btnPublico);
+        final Button btnTelefone = (Button)findViewById(R.id.btnTelefone);
 
         btnCinco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
 
 
             }
@@ -86,9 +60,11 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
 
                 Intent publicoIntent = new Intent(getApplicationContext(), PublicoActivity.class);
 
+
+                publicoIntent.putExtra("CORRECT_ANSWER", String.valueOf(questions[currentQuestionIndex].getCorrectAnswer().getIdentifier()));
                 startActivity(publicoIntent);
 
-
+                btnPublico.setVisibility(View.INVISIBLE);
 
 
             }
@@ -99,9 +75,9 @@ public class MillionaireActivity extends ActionBarActivity implements View.OnCli
             public void onClick(View view) {
 
 
-               Toast.makeText(getApplicationContext(), "A resposta correcta é a ", Toast.LENGTH_SHORT).show();
+               Toast.makeText(getApplicationContext(), "A resposta correcta é a " + questions[currentQuestionIndex].getCorrectAnswer().getIdentifier() , Toast.LENGTH_SHORT).show();
 
-
+                btnTelefone.setVisibility(View.INVISIBLE);
 
 
             }
