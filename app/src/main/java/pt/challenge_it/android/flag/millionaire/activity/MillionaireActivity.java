@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
+import java.util.Random;
 
 import pt.challenge_it.android.flag.millionaire.R;
 import pt.challenge_it.android.flag.millionaire.model.Question;
@@ -88,7 +89,7 @@ public class MillionaireActivity extends Activity implements View.OnClickListene
 
     }
 
-
+    
 
     @Override
     public void onClick(View v) {
