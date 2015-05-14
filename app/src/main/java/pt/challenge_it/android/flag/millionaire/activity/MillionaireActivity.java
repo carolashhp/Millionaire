@@ -1,5 +1,6 @@
 package pt.challenge_it.android.flag.millionaire.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -23,7 +24,7 @@ import pt.challenge_it.android.flag.millionaire.provider.AnswerContract;
 import pt.challenge_it.android.flag.millionaire.provider.OperationsManager;
 import pt.challenge_it.android.flag.millionaire.provider.QuestionContract;
 
-public class MillionaireActivity extends ActionBarActivity implements View.OnClickListener{
+public class MillionaireActivity extends Activity implements View.OnClickListener{
 
     private Question[] questions;
     private int currentQuestionIndex;

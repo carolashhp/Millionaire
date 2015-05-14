@@ -1,5 +1,6 @@
 package pt.challenge_it.android.flag.millionaire.activity;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,7 +13,7 @@ import pt.challenge_it.android.flag.millionaire.R;
 import pt.challenge_it.android.flag.millionaire.model.Question;
 import pt.challenge_it.android.flag.millionaire.provider.AnswerContract;
 
-public class PublicoActivity extends ActionBarActivity {
+public class PublicoActivity extends Activity {
 
 
 

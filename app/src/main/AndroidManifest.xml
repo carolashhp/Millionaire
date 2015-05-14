@@ -38,10 +38,7 @@
             android:exported="false" >
         </provider>
 
-        <activity
-            android:name=".activity.CincoActivity"
-            android:label="@string/title_activity_cinco" >
-        </activity>
+
         <activity
             android:name=".activity.MillionaireActivity"
             android:label="@string/title_activity_millionaire" >
